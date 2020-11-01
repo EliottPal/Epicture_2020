@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <!-- Frame -->
+            <ImageView
+                android:id="@+id/rectimage3"
+                android:layout_width="396dp"
+                android:layout_height="110dp"
+                android:src="@drawable/rectangle_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.024" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-89dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="horizontal">
+
+                <!-- Profile Pic -->
+                <ImageView
+                    android:id="@+id/userProfilePic"
+                    android:layout_width="95dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="-20dp"
+                    android:src="@drawable/icon_profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectimage3"
+                    app:layout_constraintStart_toStartOf="@+id/rectimage3"
+                    app:layout_constraintTop_toTopOf="@+id/rectimage3" />
+
+                <!-- User Name -->
+                <TextView
+                    android:id="@+id/textUsername"
+                    android:layout_width="225dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="12dp"
+                    android:text="UserName"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectimage3"
+                    app:layout_constraintStart_toEndOf="@+id/userProfilePic"
+                    app:layout_constraintTop_toTopOf="@+id/rectimage3" />
+
+                <!-- Upload button -->
+                <Button
+                    android:id="@+id/buttonUpload"
+                    android:layout_width="36dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/icon_upload"
+                    android:onClick="goToUploadPage"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectimage3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectimage3"
+                    app:layout_constraintHorizontal_bias="0.428"
+                    app:layout_constraintStart_toEndOf="@+id/textUsername"
+                    app:layout_constraintTop_toTopOf="@+id/rectimage3"
+                    tools:ignore="OnClick" />
+            </LinearLayout>
+
+            <!-- List of uploaded pictures -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="Reputation :"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="20dp"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    android:textColor="@color/design_default_color_on_secondary"/>
+
+                <TextView
+                    android:id="@+id/popularity"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="Popularity"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="5dp"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    android:textColor="@color/design_default_color_on_secondary"/>
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:text="No"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    app:layout_constraintStart_toEndOf="@+id/popularity"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="posts"
+                    android:layout_marginTop="2dp"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginStart="6dp"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    app:layout_constraintStart_toEndOf="@+id/number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="4dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pictures_grid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/image_profile" />
+x
+            </LinearLayout>
+
+            <!-- Logout button -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="63dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonLogout"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginBottom="52dp"
+                    android:background="@drawable/icon_logout"
+                    android:backgroundTint="@color/design_default_color_on_secondary"
+                    android:onClick="logoutApp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="OnClick" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

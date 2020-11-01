@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_marginTop="20sp"
+    android:background="@mipmap/image_card"
+    android:orientation="vertical">
+
+    <!--Image Title-->
+    <TextView
+        android:id="@+id/imageCardTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Image Title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--Image-->
+    <ImageView
+        android:id="@+id/imageCardPicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="450dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_launcher_background"/>
+
+    <!-- Favorite button -->
+    <ImageButton
+        android:id="@+id/imageCardStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="-50dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="favoritePost"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <!--Upvotes-->
+            <ImageButton
+                android:id="@+id/imageCardIconUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00A9A9A9"
+                android:src="@drawable/icon_arrow_up"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/imageCardUpvotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4242"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <!--Downvotes-->
+            <ImageButton
+                android:id="@+id/imageCardIconDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#00A9A9A9"
+                android:src="@drawable/icon_arrow_down"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/imageCardDownvotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="69"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            <!--Comments-->
+            <ImageView
+                android:id="@+id/imageCardIconComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@android:drawable/stat_notify_chat" />
+
+            <TextView
+                android:id="@+id/imageCardComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="42"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
